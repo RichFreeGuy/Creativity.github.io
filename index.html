@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosity Hub - Future Design</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0b1d;
+            color: #00ffcc;
+            overflow-x: hidden;
+        }
+
+        /* Neon Button Hover Effect */
+        header nav a:hover {
+            box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc, 0 0 45px #00ffcc;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        /* Menu Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(10, 11, 29, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2);
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        /* Menu Items */
+        header nav a {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            color: #00ffcc;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            border: 1px solid #00ffcc;
+            border-radius: 4px;
+            background: rgba(10, 11, 29, 0.9);
+            transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .contact {
+            padding: 10px 20px;
+            background: #ff0044;
+            border: 1px solid #ff0044;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .contact:hover {
+            box-shadow: 0 0 20px #ff0044, 0 0 40px #ff0044, 0 0 60px #ff0044;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 150px 20px;
+            min-height: 100vh;
+            text-align: center;
+            display: none;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 48px;
+            color: #00ffcc;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+            position: relative;
+        }
+
+        p {
+            font-size: 22px;
+            color: #99ffcc;
+            margin: 20px auto;
+            width: 70%;
+            line-height: 1.6;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        /* Glitch Text Effect */
+        h1::before, h1::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            overflow: hidden;
+            color: #00ffcc;
+            clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+            opacity: 0.75;
+            animation: glitch 2.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(2px, -2px); }
+            25% { transform: translate(-2px, 2px); }
+            50% { transform: translate(2px, 2px); }
+            75% { transform: translate(-2px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Cyberpunk Dividers */
+        .divider {
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(to right, #ff0044, #00ffcc);
+            margin: 50px auto;
+            box-shadow: 0 0 10px #ff0044;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #00ffcc;
+            background-color: #1e1e2f;
+        }
+
+        /* Animations for Menu */
+        .menu-item:hover {
+            transform: translateY(-5px);
+            transition: 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header and Always Visible Menu -->
+<header>
+    <nav>
+        <a href="#" class="menu-item" onclick="showSection('mind-benders')">Mind Benders</a>
+        <a href="#" class="menu-item" onclick="showSection('oddities-wonders')">Oddities & Wonders</a>
+        <a href="#" class="menu-item" onclick="showSection('tech-tinkering')">Tech & Tinkering</a>
+        <a href="#" class="menu-item" onclick="showSection('creative-corner')">Creative Corner</a>
+        <a href="#" class="menu-item" onclick="showSection('global-culture')">Global Culture</a>
+        <a href="#" class="menu-item" onclick="showSection('future-insights')">Future Insights</a>
+        <a href="#" class="menu-item" onclick="showSection('retawy')">Retawy - The Product</a>
+    </nav>
+    <a href="mailto:adam.jukedya@gmail.com" class="contact">Contact Us</a>
+</header>
+
+<!-- Sections -->
+<section id="mind-benders" class="active">
+    <h1 data-text="Mind Benders">Mind Benders</h1>
+    <div class="divider"></div>
+    <p>Puzzles and riddles that challenge the brain and make you think outside the box. 
+       Test your problem-solving abilities with mind-bending challenges designed to stretch your logic, creativity, and focus. 
+       Engage with daily mind exercises to boost your cognitive flexibility.</p>
+</section>
+
+<section id="oddities-wonders">
+    <h1 data-text="Oddities & Wonders">Oddities & Wonders</h1>
+    <div class="divider"></div>
+    <p>Explore the world of the strange, the bizarre, and the unexplainable. Dive into fascinating facts, mysterious stories, 
+       and curious events from history. This is where curiosity meets the incredible, and logic defies reason. 
+       Perfect for those who love the unknown and the weird.</p>
+</section>
+
+<section id="tech-tinkering">
+    <h1 data-text="Tech & Tinkering">Tech & Tinkering</h1>
+    <div class="divider"></div>
+    <p>For the tech enthusiasts and the hands-on creators. 
+       Explore the latest in technology trends, get hands-on with DIY electronics projects, and join coding challenges to 
+       improve your programming skills. Whether you're just starting out or a seasoned tinkerer, this section keeps you innovating.</p>
+</section>
+
+<section id="creative-corner">
+    <h1 data-text="Creative Corner">Creative Corner</h1>
+    <div class="divider"></div>
+    <p>A dedicated space for your creative spirit. Share your artwork, short stories, photography, and more. 
+       Participate in weekly design challenges and collaborate with others in the community. 
+       The Creative Corner is where imagination knows no bounds.</p>
+</section>
+
+<section id="global-culture">
+    <h1 data-text="Global Culture">Global Culture</h1>
+    <div class="divider"></div>
+    <p>Embark on a virtual journey across the globe. Explore diverse cultures, unique traditions, and fascinating stories 
+       from countries near and far. Whether it’s music, art, food, or language, Global Culture immerses you in a world of discovery.</p>
+</section>
+
+<section id="future-insights">
+    <h1 data-text="Future Insights">Future Insights</h1>
+    <div class="divider"></div>
+    <p>Look ahead into the future of technology, science, and humanity. 
+       Explore groundbreaking research, futuristic concepts, and the ideas that could shape tomorrow. 
+       From AI to space exploration, Future Insights takes you on a journey into what’s next.</p>
+</section>
+
+<section id="retawy">
+    <h1 data-text="Retawy - The Product">Retawy - The Product</h1>
+    <div class="divider"></div>
+    <p>**Retawy** is the revolutionary new product designed to completely transform the way you interact with technology. 
+       Combining cutting-edge AI capabilities with seamless user experience, Retawy adapts to your lifestyle. 
+       From managing your tasks to personalizing your daily routine, Retawy is built to enhance your productivity and creativity.</p>
+    <p>Features include:
+       <ul>
+         <li>AI-driven personal assistant</li>
+         <li>Seamless integration with smart devices</li>
+         <li>Interactive holographic interface</li>
+         <li>Advanced machine learning capabilities to predict and adapt to your needs</li>
+       </ul>
+       Discover how Retawy can become the most powerful tool in your arsenal of creativity.
+    </p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>Creative Stuff | By, Mada Utgest</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll("section");
+        
+        // Hide all sections
+        sections.forEach(section => {
+            section.classList.remove("active");
+        });
+        
+        // Show the selected section
+        const selectedSection = document.getElementById(sectionId);
+        selectedSection.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
